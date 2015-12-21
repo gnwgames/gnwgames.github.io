@@ -3,6 +3,7 @@ var platforms, player, cursors
 // flags
 var jumping
 
+// Using https://phaser.io as a gaming platform
 var game = new Phaser.Game(700, 500, Phaser.AUTO, '', {
   preload: preload,
   update: update,
