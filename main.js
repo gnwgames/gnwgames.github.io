@@ -18,6 +18,7 @@ var game = new Phaser.Game(700, 500, Phaser.AUTO, '', {
 function preload() {
   game.load.image('rcircle','./img/rcircle.png')
   game.load.image('grect', './img/grect.gif')
+  game.load.image('bullet', './img/bullet.png', 20,20)
 
 }
 
@@ -59,5 +60,16 @@ function create() {
       textInstance.text = text[textIndex]
     }
   })
+  var keySpace = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR)
+  keySpace.onDown.add(function(key) {
+    x = player.position.x
+    y = player.position.y
+    console.log(x + " " + y)
+    var bullet = game.add.sprite(x,y, 'bullet')
+    bullet.scale.setTo(0.01, 0.01)
+    game.physics.arcade.enable(bullet)
+    bullet.body.velocity.x = (Math.random() - 0.5) * 150
+    bullet.body.velocity.y = (Math.random() - 0.5) * 150
+  }, this)
   textInstance = game.add.text(10,10, text[textIndex], {'fill': 'white', fontSize: '14pt'})
 }
