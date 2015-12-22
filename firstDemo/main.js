@@ -4,7 +4,7 @@ var platforms, player, cursors, textInstance, keyN
 var jumping, textIndex
 
 var text = ['Hello and welcome to our game. Please press "n" to continue',
-            'We are pleased to announce that we have no experience making games',
+            'We are pleased to announce that we have no prior experience making games',
             'What you see here is our silly attempt at such a thing',
             'We won\'t mind if you decide to quit']
 
