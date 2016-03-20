@@ -19,11 +19,9 @@ function create() {
 
   CircleDodge.player = new Player(this.game, 300, -100);
   circlesGroup = new CirclesGroup(this.game)
-  var circle = new Circle(this.game,50,50);
-  circlesGroup.addCircle(circle);
 
   lastDroppedTime = new Date().getSeconds();
-  circlesDropped = 1;
+  circlesDropped = 0;
 
   keys = CircleDodge.game.input.keyboard.createCursorKeys();
 
